@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Globalprint - Agregar seguimiento</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../../admin/assets/css/style.css">
+    <link rel="shortcut icon" href="../../admin/assets/images/logo-square.png" type="image/png">
+    <link rel="icon" href="../../admin/assets/images/logo-square.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="overlay-mask"></div>
+    <div class="main-wrapper">
+        <aside class="sidebar">
+            <nav class="navbar">
+                <a class="navbar-brand brand-title" href="#">
+                    <img src="../../admin/assets/images/light.png" alt="" class="logo"> Globalprint
+                </a>
+            </nav>
+            <nav class="navigation shadow-sm">
+                <div class="navigation-arrow">
+                    <i class="material-icons">chevron_left</i>
+                </div>
+                <!-------------------------------- MENU ------------------------------------>
+                <ul>
+                    <!-- PEDIDOS -->
+                    <li>
+                        <a href="#collapseSubmenu1" class="" data-toggle="collapse">
+                            <span class="caret material-icons">arrow_right</span>
+                            <span class="icon material-icons">shopping_cart</span>
+                            <span class="text">Pedidos</span>
+                        </a>
+                        <ul class="collapse" id="collapseSubmenu1">
+                            <li>
+                                <a href="../pedidos/verPedidos.html" class="">
+                                    <span class="icon material-icons">remove</span>
+                                    <span class="text">Ver pedidos</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../pedidos/agregarPedidos.html" class="">
+                                    <span class="icon material-icons">remove</span>
+                                    <span class="text">Agregar pedido</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- SEGUIMIENTOS -->
+                    <li>
+                        <a href="#collapseSubmenu3" class="" data-toggle="collapse">
+                            <span class="caret material-icons">arrow_right</span>
+                            <span class="icon material-icons">contact_phone</span>
+                            <span class="text">Seguimientos</span>
+                        </a>
+                        <ul class="collapse" id="collapseSubmenu3">
+                            <li>
+                                <a href="../seguimientos/verSeguimientos.html" class="">
+                                    <span class="icon material-icons">remove</span>
+                                    <span class="text">Ver seguimientos</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../seguimientos/agregarSeguimientos.html" class="">
+                                    <span class="icon material-icons">remove</span>
+                                    <span class="text">Agregar seguimiento</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../seguimientos/sinSeguimientos.html" class="">
+                                    <span class="icon material-icons">remove</span>
+                                    <span class="text">Sin seguimiento</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <div class="navigation-arrow right">
+                    <i class="material-icons">chevron_right</i>
+                </div>
+            </nav>
+        </aside>
+        <div class="right-area">
+            <header>
+                <div>
+                    <ul class="navbar-nav">
+                        <li class="nav-item icon">
+                            <button class="hamburger" id="hamburger-btn">
+                                <span class="material-icons">menu</span>
+                            </button>
+                        </li>
+                        <li class="flex-fill"></li>
+                        <li class="nav-item icon">
+                            <button class="nav-link" id="fullscreen-btn">
+                                <span class="material-icons">fullscreen</span>
+                            </button>
+                        </li>
+                        <!-- Messages Dropdown Menu -->
+                        <li class="nav-item dropdown with-caret">
+                            <a class="nav-link" data-toggle="dropdown" href="#">
+                                <span id="nameAndRol"></span>
+                            </a>
+                            <div class="dropdown-menu p-1 dropdown-menu-right">
+                                <a id="logout-link" href="" class="dropdown-item">
+                                    Logout
+                                </a>
+                                <div class="dropdown-divider"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+            <div class="main-content container">
+                <div class="page-header">
+                    <div>
+                        <span class="h2">Agregar seguimiento</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <div
+                                    class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-3 m-auto px-3 pt-5 pb-4 card shadow m-3">
+                                    <img src="../../admin/assets/images/dark.png" height="50" alt="Moss Logo"
+                                        class="logo justify-content-center d-flex mx-auto mb-3">
+                                    <form id="userForm" class="p-3">
+                                        <div class="form-group">
+                                            <span>Empresa</span>
+                                            <select class="custom-select" id="nombreEmpresa"></select>
+                                        </div>
+                                        <div class="form-group">
+                                            <span>Pedido</span>
+                                            <select class="custom-select" id="idPedido"></select>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="condiciones" id="condiciones" class="form-control"
+                                                placeholder="Condiciones del trabajo">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="historia" id="historia" class="form-control"
+                                                placeholder="Historia" required>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary btn-block my-4">Agregar</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../admin/assets/js/vendor.bundle.js"></script>
+    <script src="../../admin/assets/js/app.bundle.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
+    <!--ALERTAS-->
+    <script src="../../admin/assets/js/demo/alert.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.12.7/sweetalert2.all.min.js"></script>
+
+    <!--ACCESO A LA PAGINA-->
+    <script src="../../admin/assets/js/acceso.js"></script>
+
+    <!--SEGUIMIENTOS-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const apiUrl = localStorage.getItem('apiUrl');
+            const API_URL_EMPRESAS = `${apiUrl}/empresas`;
+            const API_URL = `${apiUrl}/seguimientos`;
+            const API_URL_PEDIDOS = `${apiUrl}/pedidos`;
+            const form = document.getElementById('userForm');
+            const token = localStorage.getItem('token');
+
+            const selectNombreEmpresa = document.getElementById('nombreEmpresa');
+            const selectPedido = document.getElementById('idPedido');
+
+            // ----------------------FUNCION PARA CARGAR NOMBRES EMPRESAS------------------------
+            function cargarEmpresas() {
+                fetch(API_URL_EMPRESAS, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        // Limpiar el select
+                        selectNombreEmpresa.innerHTML = '<option selected></option>';
+
+                        // Agregar opciones al select de empresas basadas en los datos de la API
+                        data.forEach(empresa => {
+                            const option = document.createElement('option');
+                            option.text = empresa.nombreEmpresa;
+                            option.value = empresa.id_empresa; // Usar el id de la empresa
+                            selectNombreEmpresa.appendChild(option);
+                        });
+                    })
+                    .catch(error => {
+                        console.error('Error al cargar las empresas:', error);
+                    });
+                // Añadir evento change para cargar pedidos cuando se selecciona una empresa
+                selectNombreEmpresa.addEventListener('change', cargarPedidos);
+            }
+
+            // ---------------------------FUNCION PARA CARGAR PEDIDOS---------------------------------
+            function cargarPedidos(event) {
+                const empresaId = event.target.value;
+
+                if (empresaId) {
+                    fetch(`${API_URL_PEDIDOS}/empresa/${empresaId}`, {
+                        method: 'GET',
+                        headers: {
+                            'Authorization': `Bearer ${token}`
+                        }
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            // Limpiar el select
+                            selectPedido.innerHTML = '<option selected></option>';
+
+                            if (data.message) {
+                                // Mostrar mensaje si no hay pedidos
+                                const option = document.createElement('option');
+                                option.text = data.message;
+                                option.value = '';
+                                selectPedido.appendChild(option);
+                            } else {
+                                // Agregar opciones al select de pedidos basadas en los datos filtrados
+                                data.forEach(pedido => {
+                                    const option = document.createElement('option');
+                                    option.text = pedido.idPedido;
+                                    option.value = pedido.idPedido;
+                                    selectPedido.appendChild(option);
+                                });
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error al cargar los pedidos:', error);
+                        });
+                } else {
+                    selectPedido.innerHTML = '<option selected></option>'; // Limpiar si no hay empresa seleccionada
+                }
+            }
+
+
+            cargarEmpresas();
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const nombreEmpresa = selectNombreEmpresa.options[selectNombreEmpresa.selectedIndex].text;
+                const idPedido = selectPedido.value;
+                const condiciones = document.getElementById('condiciones').value;
+                const historia = document.getElementById('historia').value;
+
+                // Fetch token de autenticación desde el localStorage
+                const token = localStorage.getItem('token');
+
+                // Crear objeto de usuario
+                const user = {
+                    nombreEmpresa: nombreEmpresa,
+                    idPedido: idPedido,
+                    condiciones: condiciones,
+                    historia: historia
+                };
+
+                // Enviar solicitud POST a la API
+                fetch(API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}` // Añadir el token al encabezado de autorización
+                    },
+                    body: JSON.stringify(user)
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.errors) {
+                            // Muestra los errores si los hay
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: Object.values(data.errors).join(' '),
+                            });
+                        } else {
+                            // Muestra un mensaje de éxito
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Registro exitoso',
+                                text: data.message,
+                            }).then(() => {
+                                window.location.href = '../seguimientos/verSeguimientos.html';
+                            });
+                        }
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: 'Hubo un error al registrar el usuario.',
+                        });
+                    });
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

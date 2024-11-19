@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PublicArte - Categorias</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <link rel="shortcut icon" href="../assets/images/logo-square.png" type="image/png">
+    <link rel="icon" href="../assets/images/logo-square.png" type="image/png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+
+
+    <link href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <div class="overlay-mask"></div>
+    <div class="main-wrapper ">
+        <aside class="sidebar">
+            <nav class="navbar">
+                <a class="navbar-brand brand-title" href="#">
+                    <img src="../assets/images/light.png" alt="" class="logo"> PublicArte
+                </a>
+            </nav>
+            <nav class="navigation shadow-sm">
+                <div class="navigation-arrow">
+                    <i class="material-icons">chevron_left</i>
+                </div>
+                <!-------------------------------- MENU ------------------------------------>
+                <ul>
+                    <!-- DASHBOARD -->
+                    <li>
+                        <a href="../dashboard.html" class="">
+                            <span class="icon material-icons">dashboard</span>
+                            <span class="text">Dashboard</span>
+                        </a>
+                    </li>
+                    
+                    <!-- PEDIDOS -->
+                    <li>
+                        <a href="#collapseSubmenu1" class="" data-toggle="collapse">
+                            <span class="caret material-icons">arrow_right</span>
+                            <span class="icon material-icons">shopping_cart</span>
+                            <span class="text">Pedidos</span>
+                        </a>
+                        <ul class="collapse" id="collapseSubmenu1">
+                            <li>
+                                <a href="../pedidos/verPedidos.html" class="">
+                                    <span class="icon material-icons">remove</span>
+                                    <span class="text">Ver pedidos</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../pedidos/agregarPedidos.html" class="">
+                                    <span class="icon material-icons">remove</span>
+                                    <span class="text">Agregar pedido</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- EMPRESAS -->
+                    <li>
+                        <a href="#collapseSubmenu2" class="" data-toggle="collapse">
+                            <span class="caret material-icons">arrow_right</span>
+                            <span class="icon material-icons">store</span>
+                            <span class="text">Empresas</span>
+                        </a>
+                        <ul class="collapse" id="collapseSubmenu2">
+                            <li>
+                                <a href="../empresas/verEmpresas.html" class="">
+                                    <span class="icon material-icons">remove</span>
+                                    <span class="text">Ver empresas</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../empresas/agregarEmpresas.html" class="">
+                                    <span class="icon material-icons">remove</span>
+                                    <span class="text">Agregar empresa</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- SEGUIMIENTOS -->
+                    <li>
+                        <a href="#collapseSubmenu3" class="" data-toggle="collapse">
+                            <span class="caret material-icons">arrow_right</span>
+                            <span class="icon material-icons">contact_phone</span>
+                            <span class="text">Seguimientos</span>
+                        </a>
+                        <ul class="collapse" id="collapseSubmenu3">
+                            <li>
+                                <a href="../seguimientos/verSeguimientos.html" class="">
+                                    <span class="icon material-icons">remove</span>
+                                    <span class="text">Ver seguimientos</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../seguimientos/agregarSeguimientos.html" class="">
+                                    <span class="icon material-icons">remove</span>
+                                    <span class="text">Agregar seguimiento</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../seguimientos/sinSeguimientos.html" class="">
+                                    <span class="icon material-icons">remove</span>
+                                    <span class="text">Sin seguimiento</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- CATEGORIAS -->
+                    <li>
+                        <a href="#collapseSubmenu4" class="" data-toggle="collapse">
+                            <span class="caret material-icons">arrow_right</span>
+                            <span class="icon material-icons">category</span>
+                            <span class="text">Categorias</span>
+                        </a>
+                        <ul class="collapse" id="collapseSubmenu4">
+                            <li>
+                                <a href="../categorias/verCategorias.html" class="">
+                                    <span class="icon material-icons">remove</span>
+                                    <span class="text">Ver categorias</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../categorias/agregarCategorias.html" class="">
+                                    <span class="icon material-icons">remove</span>
+                                    <span class="text">Agregar categoria</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- USUARIOS -->
+                    <li>
+                        <a href="#collapseSubmenu5" class="" data-toggle="collapse">
+                            <span class="caret material-icons">arrow_right</span>
+                            <span class="icon material-icons">people</span>
+                            <span class="text">Usuarios</span>
+                        </a>
+                        <ul class="collapse" id="collapseSubmenu5">
+                            <li>
+                                <a href="../usuarios/verUsuarios.html" class="">
+                                    <span class="icon material-icons">remove</span>
+                                    <span class="text">Ver usurios</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../usuarios/agregarUsuarios.html" class="">
+                                    <span class="icon material-icons">remove</span>
+                                    <span class="text">Agregar usuario</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="navigation-arrow right">
+                    <i class="material-icons">chevron_right</i>
+                </div>
+            </nav>
+        </aside>
+        <div class="right-area">
+            <header>
+                <div>
+                    <ul class="navbar-nav">
+                        <li class="nav-item icon">
+                            <button class="hamburger" id="hamburger-btn">
+                                <span class="material-icons">menu</span>
+                            </button>
+                        </li>
+
+
+                        <li class="flex-fill"></li>
+
+                        <li class="nav-item icon">
+                            <button class="nav-link" id="fullscreen-btn">
+                                <span class="material-icons">fullscreen</span>
+                            </button>
+                        </li>
+
+
+                        <!-- Messages Dropdown Menu -->
+                        <li class="nav-item dropdown with-caret">
+                            <a class="nav-link" data-toggle="dropdown" href="#">
+                                <span id="nameAndRol"></span>
+                            </a>
+                            <div class="dropdown-menu p-1 dropdown-menu-right">
+                                <a id="logout-link" href="" class="dropdown-item">
+                                    Logout
+                                </a>
+                                <div class="dropdown-divider"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+            <div class="main-content container">
+                <div class="page-header">
+                    <div>
+                        <span class="h2">Lista de categorias</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 ">
+                        <div class="card shadow">
+                            <div class="card-body ">
+                                <div class="table-responsive">
+                                    <table id="data-table" class="table table-hover w-100">
+                                        <thead class="thead-light">
+                                            <tr>
+                                                <th>Nombre</th>
+                                                <th>creado</th>
+                                                <th>Opciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="table-tbody">
+                                            <!-- Aquí se agregarán dinámicamente las filas -->
+                                        </tbody>
+
+                                        <tfoot class="thead-light">
+                                            <tr>
+                                                <th>Nombre</th>
+                                                <th>creado</th>
+                                                <th>Opciones</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/vendor.bundle.js"></script>
+
+
+    <script src="../assets/js/app.bundle.js"></script>
+
+
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
+
+    <!--ALERTAS-->
+    <script src="../assets/js/demo/alert.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.12.7/sweetalert2.all.min.js"></script>
+
+    <!--ACCESO A LA PAGINA-->
+    <script src="../assets/js/acceso.js"></script>
+
+    <!--CATEGORIAS-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const apiUrl = localStorage.getItem('apiUrl');
+            const API_URL_CATEGORIAS = `${apiUrl}/categorias`;
+
+            const token = localStorage.getItem('token');
+            if (!token) {
+                window.location.href = '../index.html'; // Redirigir si no hay token
+            }
+
+           // Función mostrar la fecha en el orden dd/mm/yyyy - hr
+           function formatDateTime(dateTimeString) {
+                const date = new Date(dateTimeString);
+                const day = String(date.getDate()).padStart(2, '0');
+                const month = String(date.getMonth() + 1).padStart(2, '0'); // Los meses empiezan en 0
+                const year = date.getFullYear();
+
+                return `${day}/${month}/${year}`;
+            }
+
+            // MOSTRAR CATEGORIAS
+            const tbody = document.getElementById('table-tbody');
+            fetch(API_URL_CATEGORIAS, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(categoria => {
+                        const tr = document.createElement('tr');
+                        tr.innerHTML = `
+                            <td>${categoria.nombreCategoria}</td>
+                            <td>${formatDateTime(categoria.updated_at)}</td>
+                            <td>
+                                <a href="../categorias/editarCategorias.html" type="button" class="btn btn-secondary edit-btn" data-categoria='${JSON.stringify(categoria)}'>Editar</a>
+                                <button class="btn btn-danger delete-btn" data-id='${categoria.id_categoria}' data-name='${categoria.nombreCategoria}'">Borrar</button>
+                            </td>
+                        `;
+                        tbody.appendChild(tr);
+                    });
+
+                    // Añadir evento de clic a los botones de editar
+                    document.querySelectorAll('.edit-btn').forEach(button => {
+                        button.addEventListener('click', function (event) {
+                            event.preventDefault();
+                            const categoria = JSON.parse(this.getAttribute('data-categoria'));
+                            localStorage.setItem('toEdit', JSON.stringify(categoria));
+                            window.location.href = this.getAttribute('href');
+                        });
+                    });
+
+                    // Añadir evento de clic a los botones de borrar
+                    document.querySelectorAll('.delete-btn').forEach(button => {
+                        button.addEventListener('click', function (event) {
+                            event.preventDefault();
+                            const id = this.getAttribute('data-id');
+                            const nombre = this.getAttribute('data-name');
+                            Swal.fire({
+                                title: '¿Estás seguro?',
+                                text: `Borrar a ${nombre}`,
+                                icon: 'warning',
+                                showCancelButton: true,
+                                confirmButtonColor: '#3085d6',
+                                cancelButtonColor: '#d33',
+                                confirmButtonText: 'Sí, borrarlo'
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    fetch(`${API_URL_CATEGORIAS}/${id}`, {
+                                        method: 'DELETE',
+                                        headers: {
+                                            'Authorization': `Bearer ${token}`
+                                        }
+                                    })
+                                    .then(response => response.json())
+                                    .then(data => {
+                                        // Actualizar la tabla después de borrar
+                                        window.location.reload();
+                                    })
+                                    .catch(error => {
+                                        console.error('Error al borrar la categoria:', error);
+                                        Swal.fire(
+                                            'Error',
+                                            'Hubo un error al borrar la categoria.',
+                                            'error'
+                                        );
+                                    });
+                                }
+                            });
+                        });
+                    });
+
+                    // Inicializar DataTable después de agregar las filas
+                    $('#data-table').DataTable();
+                })
+                .catch(error => {
+                    console.error('Error al obtener la lista de categorias:', error);
+                });
+
+        });
+    </script>
+    
+</body>
+
+</html>
