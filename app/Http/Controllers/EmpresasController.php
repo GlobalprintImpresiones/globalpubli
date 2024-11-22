@@ -120,7 +120,7 @@ class EmpresasController extends Controller
     // MOSTRAR EMPRESAS DESCENDENTE
     public function index()
     {
-        return Empresas::orderBy('updated_at', 'desc')->get();
+        return Empresas::orderBy('nombreEmpresa', 'asc')->get();
     }
 
 
