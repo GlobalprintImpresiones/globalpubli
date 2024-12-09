@@ -195,8 +195,13 @@
                 .then(data => {
                     data.pedidos.forEach(pedido => {
                         const tr = document.createElement('tr');
-                        const buttonIcon = pedido.estadoPedido === 0 ? 'check_circle_outline' : 'check_circle';
-                        const buttonClass = pedido.estadoPedido === 0 ? 'btn btn-outline-success' : 'btn btn-success disabled';
+                        const buttonHtml = pedido.estadoPedido === 0 
+                            ? `<button class="btn btn-outline-success estado-btn" data-id="${pedido.id_pedido}">
+                                Entregar
+                                </button>` 
+                                    : `<button class="btn btn-success disabled estado-btn" data-id="${pedido.id_pedido}">
+                                        <span class="icon material-icons">check_circle</span>
+                            </button>`;
                         const deleteIcon = 'delete'; // Icono para el botón de borrar
                         const pdfIcon = 'insert_drive_file'; // Icono para el botón de PDF
                         tr.innerHTML = `
@@ -214,9 +219,7 @@
                                 <button class="btn btn-secondary pdf-btn" data-id="${pedido.id_pedido}">
                                     <span class="icon material-icons">${pdfIcon}</span>
                                 </button>
-                                <button class="${buttonClass} estado-btn" data-id="${pedido.id_pedido}">
-                                    <span class="icon material-icons">${buttonIcon}</span>
-                                </button>
+                                ${buttonHtml} <!-- Botón dinámico basado en el estadoPedido -->
                                 <button class="btn btn-danger delete-btn" data-id="${pedido.id_pedido}" data-empresa="${pedido.Empresa}">
                                     <span class="icon material-icons">${deleteIcon}</span>
                                 </button>
