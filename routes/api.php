@@ -31,6 +31,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('pdf/{id}', [PedidosController::class, 'pdf']);
     Route::get('pedidos/empresa/{id}', [PedidosController::class, 'pedidosPorEmpresa']);
     Route::post('pedidos/empresaYpedido', [PedidosController::class, 'storeEmpresaYPedido']);
+    Route::post('pedidos/sumarAnticipo/{id}', [PedidosController::class, 'sumarAnticipo']);
 
     // SEGUIMIENTOS
     Route::apiResource('seguimientos', SeguimientosController::class);
