@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\ResponseHeaderBag;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class PedidosController extends Controller
 {
@@ -202,6 +203,8 @@ class PedidosController extends Controller
 
         $pedido->fechaEntrega = now();
 
+        $pedido->anticipo = $pedido->montoTotal;
+        $pedido->saldo = 0;
         $pedido->estadoPedido = 1; // Establecer el estado a 1
 
         $pedido->save();
@@ -288,7 +291,7 @@ class PedidosController extends Controller
         }
 
         // IMAGEN
-        $pdf->Image('admin/assets/images/logoPNG.png', 25, 3, 35);
+        $pdf->Image('admin/assets/images/logoGlobalprint.png', 25, 3, 35);
 
         // Encabezado "RECIBO"
         $pdf->SetTextColor(0, 0, 0);
@@ -297,7 +300,7 @@ class PedidosController extends Controller
         $pdf->SetFont('Arial', '', $sizeLetra);
 
         // UBICACION Y NUMEROS
-        $direccion = "Calle Santivañez N° 265 entre Junin y Hamiraya \nCel: 69474001 - 62616519";
+        $direccion = "Av. Ayacucho N° 127 casi Heroinas \nEdif. Cespedes piso 7 of.1 \nCel: 69474001 - 62616519 - 60777751";
         // Posicionar el cursor verticalmente 10 mm más arriba de la posición actual
         $currentY = $pdf->GetY(); // Obtiene la posición actual de Y
         $pdf->SetY($currentY - 10); // Ajusta la posición 10 mm hacia arriba
@@ -383,7 +386,7 @@ class PedidosController extends Controller
 
         // Espacio debajo de la línea para el texto
         $pdf->Ln(1); // Salto de línea de 5 mm
-        $pdf->Cell(73, 5, 'PUBLICARTE', 0, 0, 'C'); // Texto centrado bajo la línea
+        $pdf->Cell(73, 5, 'GLOBALPRINT', 0, 0, 'C'); // Texto centrado bajo la línea
 
         // Configurar la posición para la segunda firma (derecha)
         $pdf->SetY($yPosition);
@@ -569,5 +572,53 @@ class PedidosController extends Controller
         ];
 
         return response()->json($response, Response::HTTP_CREATED);
+    }
+
+    
+    //SUMAR ANTICIPOS
+    public function sumarAnticipo(Request $request, $id)
+    {
+        try {
+            // Buscar el pedido por ID
+            $pedido = Pedidos::findOrFail($id);
+        } catch (ModelNotFoundException $e) {
+            return response()->json(['error' => 'No se encontró el pedido para sumar el anticipo.'], Response::HTTP_NOT_FOUND);
+        }
+
+        // Validar los campos
+        $validator = Validator::make($request->all(), [
+            'anticipo' => ['required', 'integer', 'min:1'],
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors()], Response::HTTP_BAD_REQUEST);
+        }
+
+        $nuevoAnticipo = $request->anticipo;
+
+        // Validar que el nuevo anticipo no exceda el saldo restante
+        if ($pedido->anticipo + $nuevoAnticipo > $pedido->montoTotal) {
+            return response()->json([
+                'error' => 'El anticipo total no puede exceder el monto total del pedido.'
+            ], Response::HTTP_BAD_REQUEST);
+        }
+
+        // Actualizar los valores
+        $pedido->anticipo += $nuevoAnticipo; // Sumar el nuevo anticipo
+        $pedido->saldo = $pedido->montoTotal - $pedido->anticipo; // Recalcular el saldo
+
+        // Guardar los cambios
+        $pedido->save();
+
+        // Respuesta de éxito
+        return response()->json([
+            'message' => 'Anticipo sumado correctamente.',
+            'pedido' => [
+                'id_pedido' => $pedido->id_pedido,
+                'anticipo' => $pedido->anticipo,
+                'saldo' => $pedido->saldo,
+                'montoTotal' => $pedido->montoTotal
+            ]
+        ], Response::HTTP_OK);
     }
 }
