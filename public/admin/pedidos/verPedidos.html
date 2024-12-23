@@ -302,6 +302,11 @@
                                 <button class="btn btn-danger delete-btn" data-id="${pedido.id_pedido}" data-empresa="${pedido.Empresa}">
                                     <span class="icon material-icons">${deleteIcon}</span>
                                 </button>
+                                <a href="../pedidos/agregarAnticipo.html?id=${pedido.id_pedido}" 
+                                    class="btn btn-warning edit-btn" 
+                                    data-pedido='${JSON.stringify(pedido)}'>
+                                        <span class="material-icons">monetization_on</span>
+                                </a>
                             </td>
                         `;
                         tbody.appendChild(tr);
@@ -453,6 +458,16 @@
                                 .catch(error => {
                                     console.error('Error en la solicitud fetch:', error);
                                 });
+                        });
+                    });
+
+                    // Añadir evento de clic a los botones de editar
+                    document.querySelectorAll('.edit-btn').forEach(button => {
+                        button.addEventListener('click', function (event) {
+                            event.preventDefault();
+                            const pedido = JSON.parse(this.getAttribute('data-pedido'));
+                            localStorage.setItem('toEdit', JSON.stringify(pedido));
+                            window.location.href = this.getAttribute('href');
                         });
                     });
 
